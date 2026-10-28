@@ -97,7 +97,7 @@ uint8_t OLED_DisplayBuf[8][128];
 void OLED_W_SCL(uint8_t BitValue)
 {
 	/*根据BitValue的值，将SCL置高电平或者低电平*/
-	GPIO_WriteBit(GPIOB, GPIO_Pin_8, (BitAction)BitValue);
+	GPIO_WriteBit(GPIOB, GPIO_Pin_6, (BitAction)BitValue);
 	
 	/*如果单片机速度过快，可在此添加适量延时，以避免超出I2C通信的最大速度*/
 	//...
@@ -114,7 +114,7 @@ void OLED_W_SCL(uint8_t BitValue)
 void OLED_W_SDA(uint8_t BitValue)
 {
 	/*根据BitValue的值，将SDA置高电平或者低电平*/
-	GPIO_WriteBit(GPIOB, GPIO_Pin_9, (BitAction)BitValue);
+	GPIO_WriteBit(GPIOB, GPIO_Pin_7, (BitAction)BitValue);
 	
 	/*如果单片机速度过快，可在此添加适量延时，以避免超出I2C通信的最大速度*/
 	//...
@@ -143,9 +143,9 @@ void OLED_GPIO_Init(void)
 	GPIO_InitTypeDef GPIO_InitStructure;
  	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;
  	GPIO_Init(GPIOB, &GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;
  	GPIO_Init(GPIOB, &GPIO_InitStructure);
 	
 	/*释放SCL和SDA*/
@@ -272,7 +272,7 @@ void OLED_Init(void)
 	
 	OLED_WriteCommand(0xA1);	//设置左右方向，0xA1正常，0xA0左右反置
 	
-	OLED_WriteCommand(0xC8);	//设置上下方向，0xC8正常，0xC0上下反置
+	OLED_WriteCommand(0xC0);	//设置上下方向，0xC8正常，0xC0上下反置
 
 	OLED_WriteCommand(0xDA);	//设置COM引脚硬件配置
 	OLED_WriteCommand(0x12);

@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "GlimmerCore STM32F103C8 (CMSIS-DAP)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/debug/GlimmerCore.elf",
+      "device": "STM32F103C8",
+      "configFiles": [
+        "${workspaceFolder}/debug/openocd_stm32f103c8_cmsis_dap.cfg"
+      ],
+      "runToEntryPoint": "main",
+      "preLaunchTask": "Build firmware",
+      "showDevDebugOutput": "none",
+      "svdFile": "${workspaceFolder}/debug/STM32F103xx.svd"
+    }
+  ]
+}

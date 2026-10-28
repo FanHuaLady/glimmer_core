@@ -1,0 +1,44 @@
+# Build and generated firmware outputs
+**/build/
+**/out/
+*.elf
+*.hex
+*.bin
+*.map
+compile_commands.json
+
+# CMake/Ninja user state
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+.ninja_deps
+.ninja_log
+build.ninja
+rules.ninja
+
+# VS Code local state
+.vscode/*.code-workspace
+.vscode/.ropeproject/
+
+# Keil and embedded IDE generated files
+*.uvguix.*
+*.uvoptx
+*.uvprojx
+*.scvd
+*.axf
+*.d
+*.o
+*.obj
+Listings/
+Objects/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Backup and temporary files
+*.bak
+*.tmp

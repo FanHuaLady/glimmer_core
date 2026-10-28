@@ -1,0 +1,2 @@
+# Keep build outputs local; repository-wide rules live in ../.gitignore.
+/build/

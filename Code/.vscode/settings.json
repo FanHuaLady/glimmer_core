@@ -1,0 +1,13 @@
+{
+  "cmake.configurePreset": "stm32f103-debug",
+  "cmake.buildPreset": "stm32f103-debug",
+  "cmake.useCMakePresets": "always",
+  "cmake.configureOnOpen": true,
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/build/debug/compile_commands.json",
+  "files.exclude": {
+    "**/build": true,
+    "**/Objects": true,
+    "**/Listings": true
+  }
+}
